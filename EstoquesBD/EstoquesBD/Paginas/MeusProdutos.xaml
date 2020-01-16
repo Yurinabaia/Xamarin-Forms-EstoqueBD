@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EstoquesBD.Paginas.MeusProdutos">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Produtos DO Lucas" TextColor="red" FontSize="18"/>
+                <Label Text="Enonctre o produto " TextColor="Gray" FontSize="10"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button  Text="Pagina Inicial" Clicked="IrPaginaInicial"/>
+            </StackLayout>
+            <Entry Placeholder="Pesquisar" TextChanged="FiltrarProduto" />
+            <Label Text="" x:Name="LBLproduto"/>
+            <ListView x:Name="LISTAPRODUTO" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                    <Label Text="{Binding NomeProduto}" FontAttributes="Bold" />
+                                    <Label Text="{Binding produtoQuantidade}" FontAttributes="Bold"/>
+                                    <Label Text="{Binding produtoDescricao}"  FontAttributes="Bold"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Grid.Column="1">
+                                    <Label Text="Editar" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="EditarProduto" CommandParameter="{Binding .}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Text="|" />
+                                    <Label Text="Excluir"
+                                           >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="ExcluirProduto" CommandParameter="{Binding .}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

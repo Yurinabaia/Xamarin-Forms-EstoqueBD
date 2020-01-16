@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EstoquesBD.Paginas.PaginaInicial">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Pagina do LUCAS" TextColor="red" FontSize="18"/>
+                    <Label Text="Enonctre seu produto aqui" TextColor="Gray" FontSize="10"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button  Text="Adcionar" Clicked="IrPaginasProdutos"/>
+                    <Button Text="Meus produtos" Clicked="IrMeusProdutos"/>
+                </StackLayout>
+                <Entry Placeholder="Pesquisar" TextChanged="FiltraProduto" />
+            <Label Text="" x:Name="LBLprodtuo"/>
+            <ListView x:Name="LISTAPRODUTO" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Column="0">
+                                        <Label Text="{Binding NomeProduto}"  FontAttributes="Bold" />
+                                        <Label Text="{Binding produtoQuantidade}" />
+                                        <Label Text="{Binding produtoDescricao}" />
+                                </StackLayout>
+                                <Label Text="Mais detalhe" Grid.Column="1">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="IrMaisDetalhes" CommandParameter="{Binding .}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

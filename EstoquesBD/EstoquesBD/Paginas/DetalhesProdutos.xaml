@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EstoquesBD.Paginas.DetalhesProdutos">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="TEXTOPRINCIPAL" FontSize="22" HorizontalOptions="Center" FontAttributes="Bold"/>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="DESCRICAO" Text="{Binding produtoDescricao}" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="UTILIDADE" Text="{Binding produtoUtilidade}" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="QUANTIDADE" Text="{Binding produtoQuantidade}" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="VALOR" Text="{Binding valor}" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="VENCIMENTO" Text="{Binding Vencimento}" FontAttributes="Bold"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

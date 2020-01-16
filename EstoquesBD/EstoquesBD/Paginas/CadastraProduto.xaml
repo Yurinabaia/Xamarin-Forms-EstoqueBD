@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EstoquesBD.Paginas.CadastraProduto">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Entry x:Name="NOME" Placeholder="Nome do produto" Keyboard="Text"/>
+                <DatePicker x:Name="VENCIMENTO" />
+                <Entry x:Name="UTILIDADEDEPRODUTO" Placeholder="Qual utilidade do produto" Keyboard="Text" />
+                <Entry x:Name="QUANTIDADE" Placeholder="Qual é a quantidade do produto" Keyboard="Numeric" />
+                <Entry x:Name="VALOR" Placeholder="valor do produto" Keyboard="Numeric"/>
+                <Editor x:Name="DESCRICAO" Placeholder="Descrição do produto" HeightRequest="200"  Keyboard="Text"/>
+                
+                <Button Text="Salva" Clicked="SALVACADASTRO"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
